@@ -50,6 +50,43 @@ document.querySelectorAll('.gallery, .impact, .job ul, .exp-grid').forEach((g) =
   [...g.children].forEach((c, i) => c.style.setProperty('--i', i));
 });
 
+// ---------- Looping galleries (data-loop) ----------
+// The items are tripled (copy, original, copy). Once scrolling settles outside the
+// middle copy, the gallery jumps one set width back, so it never hits an end.
+// Runs before the video, lightbox and drag setup so the copies get those handlers too.
+document.querySelectorAll('.gallery[data-loop]').forEach((g) => {
+  const items = [...g.children];
+  const copy = () => items.map((el) => {
+    const c = el.cloneNode(true);
+    c.setAttribute('aria-hidden', 'true');
+    c.setAttribute('tabindex', '-1');
+    return c;
+  });
+  g.prepend(...copy());
+  g.append(...copy());
+  const setWidth = () => items[0].offsetLeft - g.children[0].offsetLeft;
+  const center = () => { g.scrollLeft = setWidth(); };
+  const wrap = () => {
+    const w = setWidth();
+    if (!w || g.classList.contains('dragging')) return;
+    if (g.scrollLeft < w * 0.5) g.scrollLeft += w;
+    else if (g.scrollLeft >= w * 1.5) g.scrollLeft -= w;
+  };
+  requestAnimationFrame(center);
+  window.addEventListener('resize', center);
+  let t = null;
+  const settle = () => {
+    clearTimeout(t);
+    // At a hard edge, wrap right away (Safari momentum can stall there); otherwise wait for rest.
+    const max = g.scrollWidth - g.clientWidth;
+    if (g.scrollLeft <= 1 || g.scrollLeft >= max - 1) { wrap(); return; }
+    t = setTimeout(wrap, 140);
+  };
+  g.addEventListener('scroll', settle, { passive: true });
+  if ('onscrollend' in window) g.addEventListener('scrollend', wrap);
+  window.addEventListener('pointerup', settle);
+});
+
 // ---------- Reveal on scroll ----------
 const io = new IntersectionObserver((entries) => {
   entries.forEach((e) => {

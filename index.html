@@ -17,8 +17,8 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23000'/><text x='50' y='64' font-size='40' text-anchor='middle' fill='%23fff' font-family='Arial' font-weight='300' letter-spacing='2'>JS</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@200..700&family=Geist+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=13">
 </head>
 <body>
 
@@ -44,7 +44,6 @@
   <div class="hero-content">
     <p class="eyebrow reveal">Aerospace &amp; Robotics Engineer &nbsp;/&nbsp; E.I.T.</p>
     <h1 class="hero-title"><span class="line"><span>Juan Sanchez</span></span></h1>
-    <p class="hero-sub reveal">Guidance, navigation, and control<br>for machines that <em>fly</em> and <em>move.</em></p>
     <div class="hero-cta reveal">
       <a href="#experience" class="btn btn-light">See my experience</a>
       <a href="mailto:juan.sanchez.5730@gmail.com" class="btn btn-ghost">Get in touch</a>
@@ -59,30 +58,32 @@
 <!-- ================================ INTRO ================================ -->
 <section class="intro" id="intro">
   <p class="intro-text" data-words>
-    From a flying wing that went from optimizer to <em>flight test</em>,
-    to five robot arms brought online in a San Francisco lab,
-    I build systems that leave the simulation and <em>work in the real world.</em>
+    I&rsquo;m an aerospace engineer working in robotics, with a background in
+    <em>controls and UAV systems</em> from UC San Diego. Today I help get autonomous
+    construction robots <em>tested and ready for the field.</em> What drives me is the
+    moment a machine stops being a design and <em>works in the real world.</em>
   </p>
 
   <div class="stats">
-    <div class="stat reveal"><span class="stat-num" data-count="13000" data-suffix="+">13,000+</span><span class="stat-label">design evaluations in the Nimbus optimizer</span></div>
-    <div class="stat reveal"><span class="stat-num" data-count="5">5</span><span class="stat-label">robot arms from five vendors integrated</span></div>
-    <div class="stat reveal"><span class="stat-num">100<small>%</small>&thinsp;&rarr;&thinsp;6<small>%</small></span><span class="stat-label">helicopter pitch overshoot after PID tuning</span></div>
-    <div class="stat reveal"><span class="stat-num">0.03<small> mm</small></span><span class="stat-label">pan tilt unit accuracy on robot readiness tests</span></div>
+    <a href="#proj-controls" class="stat reveal"><span class="stat-tag">Control</span><span class="stat-num" data-count="94" data-suffix="%">94%</span><span class="stat-label">less pitch overshoot on a helicopter after I retuned its PID controller, 100% down to 6%</span><span class="stat-link">Controls Lab &rarr;</span></a>
+    <a href="#proj-nimbus" class="stat reveal"><span class="stat-tag">Test</span><span class="stat-num" data-count="35" data-suffix="%">35%</span><span class="stat-label">model error my thrust stand tests caught and corrected before we chose the propeller</span><span class="stat-link">Nimbus UAV &rarr;</span></a>
+    <a href="#exp-rcs" class="stat reveal"><span class="stat-tag">Integration</span><span class="stat-num" data-count="5">5</span><span class="stat-label">robot arms from five different vendors I brought online and tested</span><span class="stat-link">Robotics Center &rarr;</span></a>
+    <a href="#exp-civ" class="stat reveal"><span class="stat-tag">Deployment readiness</span><span class="stat-num" data-count="10" data-suffix="+">10+</span><span class="stat-label">autonomous robots a week I test and clear for shipment to construction sites</span><span class="stat-link">Civ Robotics &rarr;</span></a>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="marquee-track">
-  <span>Guidance</span><i></i><span>Navigation</span><i></i><span>Control</span><i></i><span>Flight Dynamics</span><i></i><span>Manipulation</span><i></i><span>Teleoperation</span><i></i><span>Autonomy</span><i></i><span>Simulation</span><i></i><span>Test</span><i></i>
-  <span>Guidance</span><i></i><span>Navigation</span><i></i><span>Control</span><i></i><span>Flight Dynamics</span><i></i><span>Manipulation</span><i></i><span>Teleoperation</span><i></i><span>Autonomy</span><i></i><span>Simulation</span><i></i><span>Test</span><i></i>
+  <span>Guidance</span><i></i><span>Navigation</span><i></i><span>Control</span><i></i><span>Flight Dynamics</span><i></i><span>Manipulation</span><i></i><span>Teleoperation</span><i></i><span>Autonomy</span><i></i><span>Integration</span><i></i><span>Test</span><i></i>
+  <span>Guidance</span><i></i><span>Navigation</span><i></i><span>Control</span><i></i><span>Flight Dynamics</span><i></i><span>Manipulation</span><i></i><span>Teleoperation</span><i></i><span>Autonomy</span><i></i><span>Integration</span><i></i><span>Test</span><i></i>
 </div></div>
 
 <!-- ================================ EXPERIENCE ================================ -->
 <section id="experience" class="experience">
   <div class="section-label reveal"><span>01</span> Experience</div>
 
-  <article class="job reveal">
+  <article class="job reveal" id="exp-civ">
     <div class="job-side">
+      <img class="job-logo" src="assets/img/logos/civ-robotics.webp" alt="Civ Robotics logo" loading="lazy">
       <p class="job-date">Sept. 2026 &mdash; Present</p>
       <p class="job-loc">San Francisco, CA</p>
     </div>
@@ -98,8 +99,9 @@
     </div>
   </article>
 
-  <article class="job reveal">
+  <article class="job reveal" id="exp-rcs">
     <div class="job-side">
+      <img class="job-logo" src="assets/img/logos/robotics-center.webp" alt="Robotics Center of Silicon Valley logo" loading="lazy">
       <p class="job-date">Aug. 2026 &mdash; Sept. 2026</p>
       <p class="job-loc">San Francisco, CA</p>
     </div>
@@ -107,18 +109,17 @@
       <h3>Robotics Center of Silicon Valley <span class="yc">YC25</span></h3>
       <p class="job-role">Robotics Engineer Intern</p>
       <ul>
-        <li><b>Brought five arms from five vendors online</b> by commissioning each one, standing up its SDK, and testing closed loop control on the bench.</li>
-        <li><b>Gave the team one interface for every arm</b> by building a React operator UI with live joint readout, mode switching, session logging, and 3D visualization.</li>
-        <li><b>De-risked on robot testing</b> by validating the control stack in MuJoCo, then in software and hardware in the loop with the production Jetson, CAN bus, and actuators.</li>
-        <li><b>Positioned 7-DOF arms to 0.5 to 1 mm</b> with damped least squares inverse kinematics, shared across an OpenArm and a Franka Research 3.</li>
         <li><b>Let operators drive the arm and hand with their own hand motion</b> by integrating and debugging Apple Vision Pro tracking and motion retargeting.</li>
-        <li><b>Coordinated interfaces across a team of about 20</b> electrical, software, and mechanical engineers, and contributed to the common control protocol that downstream engineers build against.</li>
+        <li><b>Brought five arms from five vendors online</b> by commissioning each one, standing up its SDK, and testing closed loop control on the bench.</li>
+        <li><b>Gave the team one interface for every arm</b> by building an operator UI with live joint readout, mode switching, session logging, and 3D visualization.</li>
+        <li><b>Coordinated interfaces across a team of about 20</b> electrical, software, and mechanical engineers, and contributed to the common control protocol that downstream engineers built against.</li>
       </ul>
     </div>
   </article>
 
   <article class="job reveal">
     <div class="job-side">
+      <img class="job-logo" src="assets/img/logos/uc-san-diego.webp" alt="UC San Diego logo" loading="lazy">
       <p class="job-date">Sept. 2025 &mdash; Jan. 2026</p>
       <p class="job-loc">San Diego, CA</p>
     </div>
@@ -126,7 +127,10 @@
       <h3>UC San Diego, Mechanical and Aerospace Engineering</h3>
       <p class="job-role">Instructional Assistant / Reader, MAE 107 Numerical Methods</p>
       <ul>
-        <li><b>Supported 120+ upper division students</b>, grading 100+ assignments a week with technical feedback on MATLAB implementation.</li>
+        <li><b>Supported 120+ upper division students</b> in numerical methods, reinforcing the key concepts of the course.</li>
+        <li><b>Graded 100+ assignments and exams every week</b> across MATLAB implementation and numerical analysis.</li>
+        <li><b>Gave detailed technical feedback</b> on MATLAB code, computational methods, and problem solving approaches.</li>
+        <li><b>Held office hours for dozens of students a week</b>, clarifying engineering concepts and helping them improve their results.</li>
       </ul>
     </div>
   </article>
@@ -137,7 +141,7 @@
   <div class="section-label reveal"><span>02</span> Projects</div>
 
   <!-- ---------- NIMBUS ---------- -->
-  <article class="chapter">
+  <article class="chapter" id="proj-nimbus">
     <div class="chapter-cover">
       <img src="assets/img/nimbus-cad.webp" alt="Nimbus flying wing CAD render" loading="lazy" class="cover-contain">
       <div class="chapter-head">
@@ -156,14 +160,14 @@
         <a class="text-link" href="https://github.com/Darlock7/Nimbus-Package-Delivery-UAV" target="_blank" rel="noopener">View the repository</a>
       </div>
       <ul class="impact reveal">
-        <li><strong>13,000+</strong><span>design evaluations; chose a feasible 800 g payload over an infeasible 1200 g optimum</span></li>
-        <li><strong>$2.70/hr</strong><span>operating profit at the flown design point</span></li>
-        <li><strong>6.68 rad/s</strong><span>short period at &zeta; 0.62, checked against MIL-STD-1797</span></li>
+        <li><strong>13,000+</strong><span>designs searched by the optimizer I wrote from scratch to find the most profitable flying wing that could actually be built and flown</span></li>
+        <li><strong>~$3/hr</strong><span>operating profit at the flown design point</span></li>
+        <li><strong>4.88%</strong><span>static margin: the tailless wing balanced to fly stable on its own, confirmed in AVL</span></li>
         <li><strong>Flown</strong><span>flight tested at Mission Bay Park, San Diego</span></li>
       </ul>
     </div>
 
-    <div class="gallery">
+    <div class="gallery" data-loop>
       <div class="g-item wide live"><video class="autoplay-video" autoplay muted loop playsinline disablepictureinpicture disableremoteplayback preload="metadata" poster="assets/img/nimbus-realflight-poster.webp"><source src="assets/video/nimbus-realflight.mp4" type="video/mp4"></video><span class="g-cap"><i class="live-dot"></i>Nimbus model flying in RealFlight</span></div>
       <button class="g-item wide" data-full="assets/img/nimbus-team.webp"><img src="assets/img/nimbus-team.webp" alt="Nimbus team with the aircraft on flight day" loading="lazy"></button>
       <button class="g-item" data-full="assets/img/nimbus-hold.webp"><img src="assets/img/nimbus-hold.webp" alt="Nimbus held up before launch" loading="lazy"></button>
@@ -194,12 +198,13 @@
         <h4>The challenge</h4>
         <p>Let an operator drive a 7-DOF arm and a dexterous hand with the motion of their own hand.</p>
         <h4>What I did</h4>
-        <p>Developed damped least squares inverse kinematics against the arm's URDF and reused it on a second 7-DOF platform, calibrated the extrinsic transform between the hand and the arm flange, and integrated and debugged Apple Vision Pro hand tracking with motion retargeting onto the arm and hand.</p>
+        <p>Integrated the teleoperation system end to end. I set up the Apple Vision Pro and the link between it and the NUC computer, brought up ARKit hand tracking, and connected the open source dex-retargeting library so the operator&rsquo;s hand motion maps onto a 7-DOF arm and a dexterous hand. Then I tuned and debugged the full pipeline in bench and hardware tests.</p>
       </div>
       <ul class="impact reveal">
         <li><strong>0.5&ndash;1 mm</strong><span>IK positioning error, verified by a forward kinematics check</span></li>
-        <li><strong>2 arms</strong><span>one IK solver shared across OpenArm and Franka Research 3</span></li>
-        <li><strong>Sim first</strong><span>validated in MuJoCo, then software and hardware in the loop, before on robot use</span></li>
+        <li><strong>End to end</strong><span>Vision Pro to NUC to robot, integrated and debugged as one pipeline on the bench and on hardware</span></li>
+        <li><strong>No controller</strong><span>the operator&rsquo;s own hand motion drives the arm and the dexterous hand&rsquo;s fingers</span></li>
+        <li><strong>Open source</strong><span>ARKit hand tracking and dex-retargeting brought up and connected on the team&rsquo;s robot instead of rebuilt from scratch</span></li>
       </ul>
     </div>
   </article>
@@ -218,7 +223,7 @@
     <div class="chapter-body">
       <div class="chapter-story reveal">
         <h4>The challenge</h4>
-        <p>Resupply depleted warehouses with no driver: navigate to a GNSS waypoint, find the right box, and pick it up.</p>
+        <p>Build a robot that resupplies depleted warehouses fully autonomously: navigate to a GNSS waypoint, find the right box, and pick it up.</p>
         <h4>What I did</h4>
         <p>Led the team. Integrated AprilTag detection on an OAK-D Lite camera driving a PID self alignment routine, GNSS waypoint guidance with cross track error, a custom ROS2 message interface, and an Arduino driven electromagnet gripper, all on a Jetson.</p>
         <a class="text-link" href="https://github.com/Darlock7/148-winter-2025-final-project-team-3" target="_blank" rel="noopener">View the repository</a>
@@ -227,6 +232,7 @@
         <li><strong>Autonomous</strong><span>box loading by AprilTag and GPS navigation to a warehouse point, demonstrated on video</span></li>
         <li><strong>Root caused</strong><span>a week long GNSS fault to a bad unit by hardware substitution</span></li>
         <li><strong>4 stages</strong><span>of test: bench, AprilTag, GPS, full integration</span></li>
+        <li><strong>On path</strong><span>cross track error from GNSS fixes in a local frame, with PID tuning that cured oversteer in path tracking</span></li>
       </ul>
     </div>
 
@@ -239,32 +245,6 @@
       <button class="g-item tall video" data-yt="6ehe19gdT4E"><img src="assets/img/yt-6ehe19gdT4E.webp" alt="Video: Jetson and Arduino communicating" loading="lazy"><span class="play"></span><span class="g-cap">Jetson to Arduino</span></button>
       <button class="g-item light" data-full="assets/img/asr-chassis.webp"><img src="assets/img/asr-chassis.webp" alt="Chassis assembly CAD" loading="lazy"></button>
       <button class="g-item light" data-full="assets/img/asr-mount.webp"><img src="assets/img/asr-mount.webp" alt="Camera and electromagnet mount CAD" loading="lazy"></button>
-    </div>
-  </article>
-
-  <!-- ---------- CENTEROS ---------- -->
-  <article class="chapter">
-    <div class="chapter-cover">
-      <img src="assets/img/rcs-centeros.webp" alt="CenterOS operator station interface" loading="lazy" class="cover-top">
-      <div class="chapter-head">
-        <p class="chapter-meta reveal">Robotics Center of Silicon Valley (YC25) &nbsp;/&nbsp; 2026</p>
-        <h2 class="split">CenterOS</h2>
-        <p class="chapter-tag reveal">One operator station for every arm</p>
-      </div>
-    </div>
-
-    <div class="chapter-body">
-      <div class="chapter-story reveal">
-        <h4>The challenge</h4>
-        <p>Every new robot arm arrives with its own SDK. The lab needed to bring any of them online through one common app.</p>
-        <h4>What I did</h4>
-        <p>Unpacked, commissioned, and integrated five arms behind a shared control protocol I contributed to, on a Linux and NVIDIA Jetson AGX Orin stack over CAN, and built the React operator UI with live joint readout, control mode switching, session logging, and 3D visualization.</p>
-      </div>
-      <ul class="impact reveal">
-        <li><strong>5 arms</strong><span>AgileX Piper, I2RT YAM, UFACTORY xArm 7, Franka Research 3, OpenArm</span></li>
-        <li><strong>1 interface</strong><span>a single operator UI for teleoperation and arm control across the fleet</span></li>
-        <li><strong>~20</strong><span>person cross disciplinary team; I coordinated hardware and software interfaces between subsystems</span></li>
-      </ul>
     </div>
   </article>
 
@@ -290,7 +270,8 @@
       <ul class="impact reveal">
         <li><strong>&lt; 3 min</strong><span>designed timeline from takeoff to first payload release</span></li>
         <li><strong>55 lb</strong><span>MTOW at 400 ft AGL, inside FAA Part 107 limits</span></li>
-        <li><strong>2 &times; 3.3 lb</strong><span>suppression munitions per sortie</span></li>
+        <li><strong>6.6 lb</strong><span>payload per sortie: two 3.3 lb fire suppression munitions</span></li>
+        <li><strong>1.5 mi</strong><span>one way range at a 75 ft/s cruise, sized to fit the three minute response timeline</span></li>
       </ul>
     </div>
 
@@ -298,13 +279,11 @@
       <button class="g-item wide sky" data-full="assets/img/jager-hero.webp"><img src="assets/img/jager-hero.webp" alt="Jager-QRF payload release render" loading="lazy"></button>
       <button class="g-item wide sky" data-full="assets/img/jager-front.webp"><img src="assets/img/jager-front.webp" alt="Jager-QRF front view" loading="lazy"></button>
       <button class="g-item wide sky" data-full="assets/img/jager-side.webp"><img src="assets/img/jager-side.webp" alt="Jager-QRF side view" loading="lazy"></button>
-      <button class="g-item wide light" data-full="assets/img/jager-mission.webp"><img src="assets/img/jager-mission.webp" alt="Jager-QRF mission profiles" loading="lazy"></button>
-      <button class="g-item wide light" data-full="assets/img/jager-sm.webp"><img src="assets/img/jager-sm.webp" alt="Jager-QRF static margin and CG travel" loading="lazy"></button>
     </div>
   </article>
 
   <!-- ---------- CONTROLS LAB ---------- -->
-  <article class="chapter chapter-compact">
+  <article class="chapter chapter-compact" id="proj-controls">
     <div class="compact-media reveal">
       <button class="g-item light solo" data-full="assets/img/dcl-heli.webp"><img src="assets/img/dcl-heli.webp" alt="Quanser 2-DOF helicopter" loading="lazy"></button>
     </div>
@@ -330,7 +309,7 @@
     <div class="exp reveal"><h3>Robotics &amp; Manipulation</h3><p>Hardware bring-up, vendor SDK integration, inverse kinematics, frame transforms, extrinsic calibration, teleoperation, motion retargeting</p></div>
     <div class="exp reveal"><h3>Autonomy &amp; Navigation</h3><p>ROS2, GNSS waypoint guidance, cross track error, AprilTag detection, PID path tracking, Jetson</p></div>
     <div class="exp reveal"><h3>Simulation &amp; Test</h3><p>MuJoCo, SIL and HIL, AVL, XFOIL, RealFlight, CMA-ES, Monte Carlo, modal testing, bench, ground, and flight test</p></div>
-    <div class="exp reveal"><h3>Software &amp; Embedded</h3><p>MATLAB/Simulink, Python, C++, React, Git, Linux, CAN bus, Jetson AGX Orin, Arduino, Roboteq, LabVIEW</p></div>
+    <div class="exp reveal"><h3>Software &amp; Embedded</h3><p>MATLAB/Simulink, Python, C++, Git, Linux, CAN bus, Jetson AGX Orin, Arduino, Roboteq, servo integration, LabVIEW</p></div>
     <div class="exp reveal"><h3>Design &amp; Build</h3><p>OnShape, GD&amp;T, 3D printing, laser cutting, carbon fiber composites, silicone casting, soldering</p></div>
   </div>
 </section>
@@ -392,6 +371,6 @@
 </div>
 
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js"></script>
+<script src="script.js?v=4"></script>
 </body>
 </html>
